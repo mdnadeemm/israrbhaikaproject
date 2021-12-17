@@ -16,7 +16,7 @@
         <nav>
             <a href="index.html"> <img src="./images/jmi logo.jfif" class="imejwa" alt="photo"></a>
             <div class="nav-link" id="navLink">
-                <i class="menu" onclick="hideMenu()">×</i>
+                
                 <ul>
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="#Campus">CAMPUS</a></li>
@@ -25,7 +25,7 @@
                     <!-- <li><a href="#">ABOUT</a></li> -->
                 </ul>
             </div>
-            <i class="menu" onclick="showMenu()">≡</i>
+            <i class="menu" id="menu" onclick="ShowHideMenu()">≡</i>
             <!-- <img src="./images/vert.svg" onclick="showMenu()" alt=""> -->
         </nav>
         <div class="textBox">
@@ -163,14 +163,31 @@
     -->
 
     <script>
-        var navLink = document.getElementById("navLink")
+        var navLink = document.getElementById("navLink");
+        var menubtn = document.getElementById("menu");
+        var navclose=true;
 
-        function showMenu() {
-            navLink.style.right = "0";
-        }
+        function ShowHideMenu() {
+            if(navclose==true){
+                navLink.style.right = "0";
+                menubtn.style.transform= "rotate(90deg)";
 
-        function hideMenu() {
-            navLink.style.right = "-200px";
+                menubtn.style.color= "#ffffff";
+               
+             console.log(navclose);
+             navclose=!navclose;
+            }
+            else if(navclose==false){
+                navLink.style.right = "-200px";
+                menubtn.style.transform= "rotate(0deg)";
+                menubtn.style.color= "#f44336";
+
+                console.log(navclose);
+                navclose=!navclose;
+                
+            }
+            
+           
         }
     </script>
 </body>
